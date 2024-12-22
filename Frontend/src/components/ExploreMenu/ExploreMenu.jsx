@@ -17,14 +17,14 @@ const ExploreMenu = ({ category, setCategory }) => {
             <div
               onClick={() =>
                 setCategory((prev) =>
-                  prev === item.menu_name ? "All" : item.menu_image
+                  prev === item.menu_name ? "All" : item.menu_name
                 )
               }
               className="explore-menu-list-item"
               key={index}
             >
               <img
-                className={category === item.menu_image ? "active" : ""}
+                className={category === item.menu_name ? "active" : ""}
                 src={item.menu_image}
                 alt={item.menu_name}
               />
