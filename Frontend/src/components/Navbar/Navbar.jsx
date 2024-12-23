@@ -1,31 +1,35 @@
 import React, { useState } from "react";
 import "./Navbar.css";
+import {Link} from 'react-router-dom'
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
 
   return (
     <div className="navbar">
-      <h1 className="logo text-2xl text-red-500">QuickBite</h1>
+      <h1 className="logo">QuickBite</h1>
       <ul className="navbar-menu">
-        <li
+        <Link
+        to='/'
           onClick={() => setMenu("home")}
           className={menu === "home" ? "active" : ""}
         >
           Home
-        </li>
-        <li
+        </Link>
+        <a
+        href="#explore-menu"
           onClick={() => setMenu("menu")}
           className={menu === "menu" ? "active" : ""}
         >
           Menu
-        </li>
-        <li
+        </a>
+        <a
+        href="#footer"
           onClick={() => setMenu("contact-us")}
           className={menu === "contact-us" ? "active" : ""}
         >
           Contact Us
-        </li>
+        </a>
       </ul>
       <div className="navbar-right">
         <div className="navbar-basket-icon">
