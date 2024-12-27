@@ -8,11 +8,26 @@ const StoreContextProvider = (props) => {
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
 
-  const addToCart = (itemId) => {
+  const addToCart = async (itemId) => {
+    // Handle the async request first
+    if (token) {
+      try {
+        await axios.post(
+          url + "/api/cart/add",
+          { itemId },
+          { headers: { token } }
+        );
+      } catch (error) {
+        console.error("Error adding item to cart:", error);
+        // Optionally handle the error, such as showing a notification to the user
+        return;
+      }
+    }
+
+    // Now update the cart state
     setCartItems((prev) => {
-      // Create a new cartItems object based on the previous state to avoid mutation
       const updatedCartItems = { ...prev };
-  
+
       // Check if the item already exists in the cart
       if (updatedCartItems[itemId]) {
         // If it exists, increment the quantity by 1
@@ -21,15 +36,22 @@ const StoreContextProvider = (props) => {
         // If it doesn't exist, add the item to the cart with quantity 1
         updatedCartItems[itemId] = 1;
       }
-  
+
       // Return the updated cartItems object
       return updatedCartItems;
     });
   };
-  
 
-  const removeFromCart = (itemId) => {
+  const removeFromCart = async (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+
+    if (token) {
+      await axios.post(
+        url + "/api/cart/remove",
+        { itemId },
+        { headers: { token } }
+      );
+    }
   };
 
   const getTotalCartAmount = () => {
@@ -56,11 +78,22 @@ const StoreContextProvider = (props) => {
     setFoodList(response.data.data);
   };
 
+  const loadCartData = async (token) => {
+    const response = await axios.post(
+      url + "/api/cart/get",
+      {},
+      { headers: { token } }
+    );
+
+    setCartItems(response.data.cartData);
+  };
+
   useEffect(() => {
     async function loadData() {
       await fetchFoodList();
       if (localStorage.getItem("token")) {
         setToken(localStorage.getItem("token"));
+        await loadCartData(localStorage.getItem("token"));
       }
     }
     loadData();
