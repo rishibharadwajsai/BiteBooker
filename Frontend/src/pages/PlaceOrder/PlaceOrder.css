@@ -39,3 +39,19 @@
 .place-order .cart-total button {
   margin-top: 30px;
 }
+
+.payment-alert{
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.payment-alert h2{
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: red;
+}
+
+.payment-alert p{
+  font-size: 15px;
+}
