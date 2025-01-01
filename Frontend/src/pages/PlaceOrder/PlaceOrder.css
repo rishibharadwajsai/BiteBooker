@@ -40,18 +40,18 @@
   margin-top: 30px;
 }
 
-.payment-alert{
+.payment-alert {
   border: 1px solid black;
   border-radius: 20px;
   padding: 10px;
 }
 
-.payment-alert h2{
+.payment-alert h2 {
   margin-bottom: 5px;
   font-size: 20px;
   color: red;
 }
 
-.payment-alert p{
+.payment-alert p {
   font-size: 15px;
 }
