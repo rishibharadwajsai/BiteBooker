@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="footer" id="footer">
       <div className="footer-content">
         <div className="footer-content-left">
-          <h1>QuickBite</h1>
+          <h1>BiteBooker</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem vero
             praesentium veritatis, repellendus quasi, aperiam aliquam ducimus,
@@ -33,13 +33,13 @@ const Footer = () => {
           <h2>GET IN TOUCH</h2>
           <ul>
             <li>+91 9876543210</li>
-            <li>contact@quickbite.com</li>
+            <li>contact@BiteBooker.com</li>
           </ul>
         </div>
       </div>
       <hr />
       <p className="footer-copyright">
-        &copy; 2024 QuickBite. All rights reserved.
+        &copy; 2024 BiteBooker. All rights reserved.
       </p>
     </div>
   );
