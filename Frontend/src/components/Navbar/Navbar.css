@@ -67,7 +67,7 @@
   z-index: 1;
 }
 
-.navbar-profile:hover .nav-profile-dropdown{
+.navbar-profile:hover .nav-profile-dropdown {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -79,18 +79,18 @@
   list-style: none;
 }
 
-.nav-profile-dropdown li{
+.nav-profile-dropdown li {
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
 }
 
-.nav-profile-dropdown img{
+.nav-profile-dropdown img {
   width: 20px;
 }
 
-.nav-profile-dropdown li:hover{
+.nav-profile-dropdown li:hover {
   color: tomato;
 }
 
