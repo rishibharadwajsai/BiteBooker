@@ -9,7 +9,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
-  const url = "http://localhost:3000";
+  const url = import.meta.env.VITE_BACKEND_URI;
   return (
     <div>
       <ToastContainer />
