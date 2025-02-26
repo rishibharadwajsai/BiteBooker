@@ -1,3 +1,5 @@
+![BiteBooker Screenshot](Frontend/public/assets/BiteBooker.png)
+
 # BiteBooker - Food Booking Web App
 
 BiteBooker is a full-stack food booking web application designed to simplify meal pre-booking and streamline the ordering process. The application consists of three main components: Admin, Backend, and Frontend. It leverages modern web technologies and frameworks to deliver a seamless user experience.
