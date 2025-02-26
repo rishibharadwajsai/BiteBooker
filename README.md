@@ -1,4 +1,4 @@
-![BiteBooker Screenshot](public/assests/BiteBooker.png)
+![BiteBooker Screenshot](Frontend/public/assets/BiteBooker.png)
 
 # BiteBooker - Food Booking Web App
 
